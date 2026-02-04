@@ -3,97 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfi Luthfillah | Digital CV</title>
+    <title>Alfi Luthfillah | Interactive CV</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="glass-bg"></div>
+<div class="bg-animate"></div>
 
 <div class="container">
-    <aside class="sidebar">
-        <div class="profile-section">
-            <div class="photo-wrapper">
+    <aside class="sidebar fade-in">
+        <div class="profile-box">
+            <div class="photo-ring">
                 <img src="foto-alfi.jpg" alt="Alfi Luthfillah" class="profile-img">
             </div>
-            <h1>Alfi Luthfillah Alamsyah</h1>
-            <p class="role">Tech Enthusiast</p>
+            <h1>Alfi Luthfillah</h1>
+            <p class="status">● Active 2026</p>
         </div>
 
-        <div class="info-section">
-            <div class="contact-item">
-                <p class="label">Email</p>
-                <p class="value">alfiluthfillahalamsyah@gmail.com</p>
-            </div>
-            <div class="contact-item">
-                <p class="label">Instagram</p>
-                <p class="value">@alfilthfllh</p>
-            </div>
-            <div class="contact-item">
-                <p class="label">Phone</p>
-                <p class="value">085183601902</p>
-            </div>
-            <div class="contact-item">
-                <p class="label">Location</p>
-                <p class="value">Bojongsoang, Bandung</p>
-            </div>
+        <div class="contact-grid">
+            <div class="c-item"><span>Email:</span><br>alfiluthfillahalamsyah@gmail.com</div>
+            <div class="c-item"><span>IG:</span><br>@alfilthfllh</div>
+            <div class="c-item"><span>WA:</span><br>085183601902</div>
         </div>
     </aside>
 
     <main class="main-content">
-        <section class="card">
-            <h2 class="section-title">Tentang Saya</h2>
-            <p>Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia pendidikan serta teknologi. Saya terus berusaha mengembangkan diri dan mempersiapkan masa depan yang lebih baik melalui pendidikan.</p>
+        <section class="card clickable" onclick="playAnim(this)">
+            <h2 class="title">TENTANG SAYA</h2>
+            <p>Saya pribadi yang tekun, memiliki rasa ingin tahu tinggi, dan tertarik pada dunia teknologi. Saya terus berkembang untuk masa depan yang lebih baik.</p>
         </section>
 
-        <section class="card">
-            <h2 class="section-title">Pendidikan</h2>
-            <div class="timeline">
-                <div class="timeline-box">
-                    <h3>SMA KP BALEENDAH</h3>
-                    <span>2023 - 2026</span>
-                </div>
-                <div class="timeline-box">
-                    <h3>SMPN 1 DAYEUHKOLOT</h3>
-                    <span>2020 - 2022</span>
-                </div>
-                <div class="timeline-box">
-                    <h3>SDN CIJAGRA 2</h3>
-                    <span>2014 - 2019</span>
-                </div>
+        <section class="card clickable" onclick="playAnim(this)">
+            <h2 class="title">PENDIDIKAN</h2>
+            <div class="entry">
+                <h3>SMA KP BALEENDAH</h3>
+                <span class="year">2023 - 2026</span>
+            </div>
+            <div class="entry">
+                <h3>SMPN 1 DAYEUHKOLOT</h3>
+                <span class="year">2020 - 2022</span>
+            </div>
+            <div class="entry">
+                <h3>SDN CIJAGRA 2</h3>
+                <span class="year">2014 - 2019</span>
             </div>
         </section>
 
-        <section class="card">
-            <h2 class="section-title">Keahlian</h2>
-            <div class="skills-grid">
-                <span class="skill-pill">Komunikasi</span>
-                <span class="skill-pill">Manajemen Waktu</span>
-                <span class="skill-pill">Kerja Sama Tim</span>
-                <span class="skill-pill">Problem Solving</span>
-                <span class="skill-pill">Bahasa Indonesia</span>
+        <section class="card clickable" onclick="playAnim(this)">
+            <h2 class="title">KEAHLIAN</h2>
+            <div class="skill-tags">
+                <span class="tag">Komunikasi</span>
+                <span class="tag">Manajemen Waktu</span>
+                <span class="tag">Teamwork</span>
+                <span class="tag">Problem Solving</span>
             </div>
         </section>
 
-        <div class="grid-2">
-            <section class="card">
-                <h2 class="section-title">Pengalaman</h2>
-                <ul class="list">
-                    <li>SSB (2016-2020)</li>
-                    <li>PRAMUKA (2017)</li>
-                </ul>
-            </section>
-            <section class="card">
-                <h2 class="section-title">Hobby</h2>
-                <ul class="list">
-                    <li>Sepak Bola</li>
-                    <li>Main Game</li>
-                </ul>
-            </section>
-        </div>
+        <section class="card clickable" onclick="playAnim(this)">
+            <h2 class="title">PENGALAMAN & SERTIFIKAT</h2>
+            <p>• SBB (2016-2020)</p>
+            <p>• PRAMUKA (2017)</p>
+            <p>• TKA MTK Certified (2026)</p>
+        </section>
     </main>
 </div>
+
+<script>
+    // Fungsi animasi saat diklik
+    function playAnim(element) {
+        element.classList.add('clicked');
+        setTimeout(() => {
+            element.classList.remove('clicked');
+        }, 400);
+    }
+</script>
 
 </body>
 </html>
