@@ -1,281 +1,106 @@
-/* --- Reset Dasar & Variabel Warna Vintage --- */
-:root {
-    --bg-paper: #f8f0dc; /* Warna krem kertas tua */
-    --ink-color: #4a3b32; /* Warna coklat tua seperti tinta lama */
-    --accent-brown: #8c7b6e; /* Warna aksen pudar */
-    --border-color: #6b5a4f;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Latar belakang Teal khas Windows 95/98 */
 body {
-    background-color: #2c241e; /* Latar belakang gelap seperti meja kayu */
-    font-family: 'Georgia', 'Times New Roman', serif; /* Font Serif klasik */
-    color: var(--ink-color);
-    line-height: 1.6;
+    background-color: #008080;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
     padding: 20px;
 }
 
-/* --- Wadah Utama Kertas Vintage --- */
-.vintage-paper {
-    max-width: 850px;
-    margin: 0 auto;
-    background-color: var(--bg-paper);
-    /* Membuat tekstur kertas halus dengan gradient */
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,245,220,0.3)), url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-    border: 8px double var(--border-color); /* Garis ganda klasik */
-    padding: 40px;
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
-    position: relative;
+.desktop-container {
+    max-width: 800px;
+    margin: auto;
 }
 
-/* --- Header & Foto --- */
-.main-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.photo-frame {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 20px;
-    border: 5px solid var(--border-color);
-    border-radius: 50%; /* Membuat foto bulat */
+.top-banner {
+    background-color: #ffff00;
+    font-weight: bold;
+    border: 2px solid #000;
+    margin-bottom: 10px;
     padding: 5px;
-    background-color: var(--bg-paper);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.main-window {
+    background-color: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 20px;
+    box-shadow: 5px 5px 0px #000;
+}
+
+header h1 {
+    color: #000080;
+    text-align: center;
+    border-bottom: 3px double #000;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 4px 10px;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Bagian Foto yang bisa diubah */
+.photo-frame {
+    border: 2px inset #fff;
+    background: #fff;
+    padding: 5px;
+    width: 160px;
+    text-align: center;
 }
 
 .profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    /* Efek Sepia dan Grayscale pada foto agar terlihat tua */
-    filter: grayscale(100%) sepia(80%) contrast(1.1);
+    width: 150px;
+    height: auto;
+    border: 1px solid #000;
 }
 
-h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 3px double var(--border-color);
-    display: inline-block;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    font-family: 'Courier New', Courier, monospace; /* Font seperti mesin ketik untuk nama */
+.caption {
+    font-size: 0.8em;
+    margin: 5px 0 0 0;
+    font-weight: bold;
 }
 
-.birth-info {
-    font-style: italic;
-    color: var(--accent-brown);
-}
-
-/* --- Kontak --- */
-.contact-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 25px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-}
-
-.detail-box {
-    background: rgba(107, 90, 79, 0.1);
-    padding: 5px 10px;
-    border: 1px dashed var(--border-color);
-}
-
-.detail-box.address {
-    width: 100%;
-    text-align: center;
-}
-
-/* --- Separator Dekoratif --- */
-.separator {
-    border: 0;
-    height: 2px;
-    background-image: linear-gradient(to right, rgba(0,0,0,0), var(--border-color), rgba(0,0,0,0));
-    margin: 30px 0;
-}
-
-/* --- Ornamen Garis Atas/Bawah --- */
-.ornament-line {
-    height: 10px;
-    border-top: 2px solid var(--border-color);
-    border-bottom: 2px solid var(--border-color);
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.ornament-line::after {
-    content: '★'; /* Simbol bintang di tengah */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -60%);
-    background-color: var(--bg-paper);
-    padding: 0 10px;
-    color: var(--border-color);
-}
-
-.ornament-line.bottom {
-    margin-top: 40px;
-    margin-bottom: 10px;
-}
-
-/* --- Bagian Konten --- */
-.vintage-section {
-    margin-bottom: 35px;
-}
-
-/* Judul Bagian ala Pita */
-.ribbon-title {
-    background: var(--border-color);
-    color: var(--bg-paper);
-    display: inline-block;
-    padding: 5px 20px;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    position: relative;
+section {
     margin-bottom: 20px;
 }
 
-.ribbon-title::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -15px;
-    border-top: 20px solid var(--border-color);
-    border-right: 15px solid transparent;
-    border-bottom: 20px solid var(--border-color);
+.box-text {
+    background: #fff;
+    padding: 10px;
+    border: 2px inset #808080;
 }
 
-.ribbon-title.sm {
-    font-size: 1em;
-    padding: 3px 15px;
+.retro-table {
+    width: 100%;
+    background: #fff;
+    border-collapse: collapse;
 }
 
-.ribbon-title.sm::after {
-    border-top-width: 16px;
-    border-bottom-width: 16px;
+.retro-table th {
+    background: #c0c0c0;
 }
 
-.sub-heading {
-    font-size: 1em;
-    color: var(--accent-brown);
-    text-transform: uppercase;
-    border-bottom: 1px dashed var(--accent-brown);
-    margin: 15px 0 10px;
-    display: inline-block;
+.blink {
+    animation: blinker 0.8s linear infinite;
+    color: #00aa00;
+    font-weight: bold;
 }
 
-/* --- Typography Konten --- */
-.justified-text {
-    text-align: justify;
-    text-indent: 30px; /* Indentasi paragraf klasik */
+@keyframes blinker {
+    50% { opacity: 0; }
 }
 
-/* --- List Gaya Klasik --- */
-.classic-list {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.classic-list li {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-/* Mengganti bullet dengan simbol wajik */
-.classic-list li::before {
-    content: '❖';
-    color: var(--accent-brown);
-    position: absolute;
-    left: -25px;
-    top: 0px;
-    font-size: 0.8em;
-}
-
-.classic-list.compact li {
-    margin-bottom: 5px;
-}
-
-/* --- List Timeline (Pendidikan) --- */
-.timeline-list {
-    list-style: none;
-    border-left: 3px solid var(--accent-brown);
-    padding-left: 20px;
-    margin-left: 10px;
-}
-
-.timeline-list li {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.timeline-list li::before {
-    content: '';
-    width: 12px;
-    height: 12px;
-    background: var(--border-color);
-    position: absolute;
-    left: -27px;
-    top: 5px;
-    border-radius: 50%;
-    border: 2px solid var(--bg-paper);
-}
-
-.date {
-    display: block;
-    font-style: italic;
-    color: var(--accent-brown);
-    font-size: 0.9em;
-}
-
-/* --- Grid Layout 2 Kolom --- */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-/* --- Footer --- */
-.vintage-footer {
+footer {
     text-align: center;
-    font-size: 0.8em;
-    color: var(--accent-brown);
-    font-family: 'Courier New', monospace;
-}
-
-/* --- Responsif untuk HP --- */
-@media (max-width: 768px) {
-    .vintage-paper {
-        padding: 20px;
-        border-width: 4px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    .contact-details {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .grid-2-col {
-        grid-template-columns: 1fr; /* Berubah jadi 1 kolom di HP */
-    }
-    
-    .photo-frame {
-        width: 120px;
-        height: 120px;
-    }
+    font-size: 0.9em;
 }
