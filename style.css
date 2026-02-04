@@ -1,126 +1,233 @@
-/* Vintage Aesthetic Style */
-body {
-    background-color: #dcd7c9; /* Warna dasar meja */
-    background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
-    font-family: 'Courier New', Courier, monospace;
-    color: #3e362e;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-    margin: 0;
+/* Import Google Fonts for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #3f51b5; /* Biru gelap modern */
+    --secondary-color: #f5f5f5; /* Abu-abu terang untuk latar belakang */
+    --text-color-dark: #333;
+    --text-color-light: #555;
+    --accent-color: #ff9800; /* Oranye aksen */
+    --border-color: #e0e0e0;
 }
 
-.paper {
-    background-color: #f4f1ea; /* Warna kertas lama */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.cv-container {
+    display: flex;
+    flex-wrap: wrap; /* Untuk responsif */
     width: 100%;
-    max-width: 800px;
-    padding: 50px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    border: 1px solid #d1ccbc;
-    position: relative;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     overflow: hidden;
 }
 
-/* Dekorasi Stempel */
-.stamp {
-    position: absolute;
-    top: 30px;
-    right: -30px;
-    border: 3px double #a94442;
-    color: #a94442;
-    padding: 5px 40px;
-    transform: rotate(25deg);
-    font-weight: bold;
-    opacity: 0.6;
-    font-size: 1.2rem;
-}
-
-header {
+/* Sidebar Styling */
+.sidebar {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 30px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.name-title {
-    font-size: 2.5rem;
-    margin: 0;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #3e362e;
-    display: inline-block;
+.profile-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.subtitle {
-    margin: 10px 0;
-    font-size: 0.9rem;
-    font-weight: bold;
+.profile-photo-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.double-line {
-    border: none;
-    border-top: 3px double #3e362e;
-    height: 0;
-    margin: 20px 0;
-}
-
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-}
-
-/* Sidebar Foto */
-.photo-container {
-    border: 1px solid #3e362e;
-    padding: 5px;
-    background: white;
-    box-shadow: 3px 3px 0px #3e362e;
-    margin-bottom: 20px;
-}
-
-.vintage-photo {
+.profile-photo {
     width: 100%;
-    height: auto;
-    filter: sepia(0.5) contrast(1.1); /* Efek foto lama */
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
-.section-title {
-    border-left: 5px solid #3e362e;
-    padding-left: 10px;
+.sidebar h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin: 10px 0 5px;
+    color: #fff;
+}
+
+.sidebar .tagline {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.sidebar section {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.sidebar h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
-    background: #e9e4d4;
     margin-bottom: 15px;
+    color: var(--accent-color);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 5px;
 }
 
-.vintage-list {
-    list-style: square;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.sidebar li span {
+    font-weight: 600;
+    margin-right: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Main Content Styling */
+.main-content {
+    flex: 2;
+    min-width: 400px;
+    padding: 30px 40px;
+    background-color: #fff;
+    color: var(--text-color-dark);
+}
+
+.main-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.main-content section {
+    margin-bottom: 30px;
+}
+
+.about-me p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.timeline {
+    position: relative;
     padding-left: 20px;
 }
 
-.year {
-    font-style: italic;
-    color: #776b5d;
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border-color);
 }
 
-.contact-box, .hobbies {
-    font-size: 0.85rem;
-    line-height: 1.6;
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 25px;
 }
 
-.footer-vintage {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.7rem;
-    border-top: 1px solid #d1ccbc;
-    padding-top: 10px;
-    opacity: 0.7;
+.timeline-dot {
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px var(--primary-color);
 }
 
-/* Responsif untuk HP */
-@media (max-width: 600px) {
-    .main-content {
-        grid-template-columns: 1fr;
+.timeline-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    margin: 0 0 5px;
+    color: var(--primary-color);
+}
+
+.period {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    margin: 0;
+}
+
+.item-list .list-item {
+    margin-bottom: 15px;
+}
+
+.item-list h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    margin: 0 0 5px;
+    color: var(--primary-color);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
     }
-    .paper {
+
+    .sidebar, .main-content {
+        min-width: unset;
+        width: 100%;
         padding: 20px;
+    }
+
+    .sidebar {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .main-content {
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px;
+    }
+    .sidebar h2 {
+        font-size: 1.5rem;
+    }
+    .main-content h2 {
+        font-size: 1.4rem;
     }
 }
